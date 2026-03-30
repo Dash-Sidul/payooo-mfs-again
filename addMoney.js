@@ -9,7 +9,11 @@ document.getElementById('btn-add-money').addEventListener('click', function(){
     const addMoney = getInputFieldValueById('input-add-money');
     const pinNumber = getInputFieldValueById('input-pin-number')
    const availableBalance = document.getElementById('available-balance').innerText;
-   const availableBalanceNumber = Number(availableBalance)
+   const availableBalanceNumber = Number(availableBalance);
+   if(isNaN(addMoney)){
+    alert('failed add money');
+    return
+   }
    if(pinNumber === 1234){
    const newBalance = availableBalanceNumber + addMoney;
    console.log(addMoney , availableBalanceNumber, newBalance);

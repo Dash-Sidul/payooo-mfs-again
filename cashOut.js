@@ -2,6 +2,10 @@ document.getElementById('btn-cash-out').addEventListener('click', function(){
     const cashOut = getInputFieldValueById('input-cash-out');
     const pinNumber = getInputFieldValueById('cash-out-pin-number');
     const availableBalance = document.getElementById('available-balance').innerText;
+    if(isNaN(cashOut)){
+        alert('Failed to add money');
+        return ;
+    }
     if(pinNumber === 1234){
     const availableBalanceNumber = Number(availableBalance);
     const newBalance = availableBalanceNumber - cashOut;
@@ -10,6 +14,8 @@ document.getElementById('btn-cash-out').addEventListener('click', function(){
     div.classList.add('bg-red-300');
     div.classList.add('p-4');
     div.classList.add('rounded')
+    div.classList.add('text-center')
+    div.classList.add('mt-4')
     div.innerHTML = `
     <h4 class="text-2xl font-bold">Cash Out</h4>
     <p>${cashOut} TK Withdraw</p>
