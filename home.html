@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payoo mfs</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <main class="flex justify-center">
+      <!-- phone mockup -->
+      <div class="mockup-phone">
+        <div class="mockup-phone-camera"></div>
+        <div
+          class="mockup-phone-display text-black grid place-content-center bg-white"
+        >
+          <!-- Available balance section -->
+          <div class="stats shadow">
+            <div class="stat">
+              <div class="stat-title">Available Balance</div>
+              <div id="available-balance" class="stat-value">9400</div>
+            </div>
+          </div>
+          <div class="mt-4">
+            <button id="show-add-money-form" class="btn btn-primary">
+              Add money
+            </button>
+            <button id="show-cash-out-form" class="btn btn-primary">Cash Out</button>
+            <button id="show-transaction-section" class="btn btn-primary">Transaction</button>
+          </div>
+          <div class="divider"></div>
+          <!-- form section start -->
+          <div id="add-money-form" class="card-body">
+            <fieldset class="fieldset">
+              <label class="label">Amount</label>
+              <input
+                id="input-add-money"
+                type="text"
+                class="input"
+                placeholder="Enter Add Money Amount"
+                autocomplete="new-password"
+              />
+              <label class="label">Password</label>
+              <input
+                id="input-pin-number"
+                type="password"
+                class="input"
+                placeholder="Password"
+                autocomplete="new-password"
+              />
+              <button id="btn-add-money" class="btn btn-primary mt-4">
+                Add Money
+              </button>
+            </fieldset>
+          </div>
+          <!-- form section end -->
+          <!-- cash out form start  -->
+          <div id="cash-out-form" class="card-body hidden">
+            <fieldset class="fieldset">
+              <label class="label">Amount</label>
+              <input
+                id="input-cash-out"
+                type="text"
+                class="input"
+                placeholder="Enter Cash Out Amount"
+                autocomplete="new-password"
+              />
+              <label class="label">Password</label>
+              <input
+                id="cash-out-pin-number"
+                type="password"
+                class="input"
+                placeholder="Password"
+                autocomplete="new-password"
+              />
+              <button id="btn-cash-out" class="btn btn-primary mt-4">
+                Cash Out
+              </button>
+            </fieldset>
+          </div>
+          <!-- cash out form end  -->
+          <!-- transaction start -->
+          <div id="transaction-section" class="hidden">
+            <h1 class="text-2xl text-center">Transaction History</h1>
+            <div id="transaction-container">
+
+            </div>
+          </div>
+          <!-- transaction end -->
+        </div>
+      </div>
+    </main>
+    <script src="./utilities.js"></script>
+    <script src="./addMoney.js"></script>
+    <script src="./cashOut.js"></script>
+    <script src="./featurs.js"></script>
+  </body>
+</html>
